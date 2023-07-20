@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
@@ -12,6 +14,7 @@ public class MouseManagement : MonoBehaviour
     private Texture2D HoverState;
     [SerializeField]
     private Texture2D PressedState;
+    [SerializeField]
     private bool isDown = false;
 
     private void OnMouseEnter()

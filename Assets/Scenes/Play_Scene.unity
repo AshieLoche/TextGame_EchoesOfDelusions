@@ -414,6 +414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   story: {fileID: 1604322967}
+  buttonChoices: {fileID: 1050195463}
+  continueButton: {fileID: 0}
 --- !u!4 &328697568
 Transform:
   m_ObjectHideFlags: 0
@@ -717,8 +719,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 328697567}
         m_TargetAssemblyTypeName: StoryManagement, Assembly-CSharp
-        m_MethodName: SetStoryLine
-        m_Mode: 4
+        m_MethodName: Small
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -780,6 +782,7 @@ MonoBehaviour:
   IdleState: {fileID: 2800000, guid: 229f2287fb9b82143997f56a695223b1, type: 3}
   HoverState: {fileID: 2800000, guid: 94c55120a8e34c94098dcbe7de627cd6, type: 3}
   PressedState: {fileID: 2800000, guid: 7017f94f92728ab4abd01035c4c802ca, type: 3}
+  isDown: 0
 --- !u!61 &584541717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1011,6 +1014,30 @@ MonoBehaviour:
           m_StringArgument: Shower_Scene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 328697567}
+        m_TargetAssemblyTypeName: StoryManagement, Assembly-CSharp
+        m_MethodName: SetStoryLine
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2.1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 328697567}
+        m_TargetAssemblyTypeName: StoryManagement, Assembly-CSharp
+        m_MethodName: SetButtonChoices
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: true
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1206445527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,6 +1091,7 @@ MonoBehaviour:
   IdleState: {fileID: 2800000, guid: 229f2287fb9b82143997f56a695223b1, type: 3}
   HoverState: {fileID: 2800000, guid: 94c55120a8e34c94098dcbe7de627cd6, type: 3}
   PressedState: {fileID: 2800000, guid: 7017f94f92728ab4abd01035c4c802ca, type: 3}
+  isDown: 0
 --- !u!61 &1206445530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1325,7 +1353,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'As the clock strikes 12 in the afternoon, the
+
+    alarm starts to blare
+    out waking you up from your
+
+    slumber. You grumpily hid under your blanket,
+
+    but
+    gave up as the alarm keeps on wailing
+
+    intensely. You turned the alarm off,
+    sitting up
+
+    with a sigh as your disheviled hair cover your
+
+    face.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1356,8 +1399,8 @@ MonoBehaviour:
   m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 60
+  m_fontSizeMax: 75
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1415,6 +1458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   story: {fileID: 1604322967}
+  buttonChoices: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!1 &1922668796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,13 +1679,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0a9c4c75005aa024e8e968a5c80dddc9, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 328697567}
+        m_TargetAssemblyTypeName: StoryManagement, Assembly-CSharp
+        m_MethodName: Large
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1699,6 +1744,7 @@ MonoBehaviour:
   IdleState: {fileID: 2800000, guid: 229f2287fb9b82143997f56a695223b1, type: 3}
   HoverState: {fileID: 2800000, guid: 94c55120a8e34c94098dcbe7de627cd6, type: 3}
   PressedState: {fileID: 2800000, guid: 7017f94f92728ab4abd01035c4c802ca, type: 3}
+  isDown: 0
 --- !u!61 &2097705811
 BoxCollider2D:
   m_ObjectHideFlags: 0
