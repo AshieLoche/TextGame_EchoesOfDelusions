@@ -6,12 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title_Scene.unity
+    path: Assets/Scenes/Tier 0/Title_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Play_Scene.unity
+    path: Assets/Scenes/Tier 0/Loader_Scene.unity
+    guid: dc005292fed7e5c4aa6168617c2303f2
+  - enabled: 1
+    path: Assets/Scenes/Tier 1/Play_Scene.unity
     guid: f03167a683e130c45904712e4d8a6b0e
   - enabled: 1
-    path: Assets/Scenes/Shower_Scene.unity
+    path: Assets/Scenes/Tier 2/Shower_Scene.unity
     guid: 33f9d54fe2e19a64faaa4ddc9b7eb47d
+  - enabled: 1
+    path: Assets/Scenes/Tier 2/StandUp_Scene.unity
+    guid: 1de2a52e868dfe94e8a1ae005a9ca050
+  - enabled: 1
+    path: Assets/Scenes/Tier 2/Exercise_Scene.unity
+    guid: c2ed2541c7ab3ae4cbb3df309c611140
+  - enabled: 1
+    path: Assets/Scenes/Tier 3/CheckPhone_Scene.unity
+    guid: fd4602e6a23acd94a884a861488d8ce8
   m_configObjects: {}

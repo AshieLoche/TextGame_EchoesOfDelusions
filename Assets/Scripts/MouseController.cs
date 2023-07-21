@@ -4,9 +4,8 @@ using System.Diagnostics;
 using System.Globalization;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
-public class MouseManagement : MonoBehaviour
+public class MouseController : MonoBehaviour
 {
     [SerializeField]
     private Texture2D IdleState;
@@ -14,12 +13,12 @@ public class MouseManagement : MonoBehaviour
     private Texture2D HoverState;
     [SerializeField]
     private Texture2D PressedState;
-    [SerializeField]
-    private bool isDown = false;
+    public static bool isDown = false;
+    public static bool isInteractable = true;
 
     private void OnMouseEnter()
     {
-        if (FindObjectOfType<MouseManagement>().isDown)
+        if (isDown)
             Cursor.SetCursor(PressedState, Vector2.zero, CursorMode.Auto);
         else
             Cursor.SetCursor(HoverState, Vector2.zero, CursorMode.Auto);
@@ -28,25 +27,29 @@ public class MouseManagement : MonoBehaviour
     private void OnMouseDown()
     {
         Cursor.SetCursor(PressedState, Vector2.zero, CursorMode.Auto);
-        FindObjectOfType<MouseManagement>().isDown = true;
+        isDown = true;
     }
 
     private void OnMouseUpAsButton()
     {
         Cursor.SetCursor(HoverState, Vector2.zero, CursorMode.Auto);
-        FindObjectOfType<MouseManagement>().isDown = false;
+        isDown = false;
     }
 
     private void OnMouseUp()
     {
-        Cursor.SetCursor(IdleState, Vector2.zero, CursorMode.Auto);
+        if (isInteractable)
+            Cursor.SetCursor(IdleState, Vector2.zero, CursorMode.Auto);
+        else
+            Cursor.SetCursor(HoverState, Vector2.zero, CursorMode.Auto);
+
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
-        FindObjectOfType<MouseManagement>().isDown = false;
+        isDown = false;
     }
 
     private void OnMouseExit()
     {
-        if (FindObjectOfType<MouseManagement>().isDown)
+        if (isDown)
             Cursor.SetCursor(PressedState, Vector2.zero, CursorMode.Auto);
         else
             Cursor.SetCursor(IdleState, Vector2.zero, CursorMode.Auto);
