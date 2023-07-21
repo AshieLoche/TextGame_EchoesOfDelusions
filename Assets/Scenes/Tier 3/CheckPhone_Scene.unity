@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 537557388}
   - component: {fileID: 537557387}
   m_Layer: 0
-  m_Name: SceneManagement
+  m_Name: SceneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -703,14 +703,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Your spirit was slightly lifted up as you gain a hint of
 
-    vigor.
-    You rushed through your shower and clothed yourself
+    vigor. You
+    rushed through your shower and clothed yourself
 
-    before grabbing your
-    phone frantically opening messenger.
+    before grabbing your phone
+    frantically opening messenger.
 
-    Your eyes swiftly glanced over to
-    the chat head of your
+    Your eyes swiftly glanced over to the chat
+    head of your
 
     friend group chat. It was silent, not a mere message.
 
@@ -1752,8 +1752,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 123
+  m_fontSizeBase: 123
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1858,7 +1858,7 @@ GameObject:
   - component: {fileID: 2011930907}
   - component: {fileID: 2011930906}
   m_Layer: 0
-  m_Name: StoryManagement
+  m_Name: StoryController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

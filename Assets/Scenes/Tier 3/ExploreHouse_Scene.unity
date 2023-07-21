@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 19002138}
   - component: {fileID: 19002137}
   m_Layer: 5
-  m_Name: Overcommit Button
+  m_Name: Check Kitchen Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 319200341}
   - component: {fileID: 319200340}
   m_Layer: 5
-  m_Name: Overcommit
+  m_Name: Check Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Overcommit
+  m_text: Check Kitchen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 537557388}
   - component: {fileID: 537557387}
   m_Layer: 0
-  m_Name: SceneManagement
+  m_Name: SceneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,27 +701,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your spirit was slightly lifted up as you gain a hint of
+  m_text: 'However, those unwelcomed thoughts came
 
-    vigor.
-    You rushed through your shower and clothed yourself
+    rushing back in. You resumed
+    your bathing taking
 
-    before grabbing your
-    phone frantically opening messenger.
-
-    Your eyes swiftly glanced over to
-    the chat head of your
-
-    friend group chat. It was silent, not a mere message.
+    your time as you pause every so often just to wallow.
 
     You
-    paused and lingered, pondering if you are doing the
+    went out of the bathroom and clothed yourself,
 
-    right thing. However,
-    you quickly snapped out of it as
+    before walking out to the
+    hallway. As you reached the
 
-    you ask to yourself, \"What could possibly
-    go wrong?\".'
+    end, you findyourself between the path towards
+    the
+
+    kitchen and the sliding doors leading to the backyard.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -748,8 +744,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -805,7 +801,7 @@ GameObject:
   - component: {fileID: 650998722}
   - component: {fileID: 650998721}
   m_Layer: 5
-  m_Name: Commit Button
+  m_Name: Check Backyard Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1725,7 +1721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Commit
+  m_text: Check Backyard
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1858,7 +1854,7 @@ GameObject:
   - component: {fileID: 2011930907}
   - component: {fileID: 2011930906}
   m_Layer: 0
-  m_Name: StoryManagement
+  m_Name: StoryController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

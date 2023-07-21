@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tier 3/CheckPhone_Scene.unity
     guid: fd4602e6a23acd94a884a861488d8ce8
+  - enabled: 1
+    path: Assets/Scenes/Tier 3/ExploreHouse_Scene.unity
+    guid: 9b42c99b811f5d64fa581ad6bc282e13
+  - enabled: 1
+    path: Assets/Scenes/Tier 3/CheckKitchen_Scene.unity
+    guid: 1b1545ed521c068448934507807b562b
+  - enabled: 1
+    path: Assets/Scenes/Tier 3/CheckBackyard_Scene.unity
+    guid: 913e2e96962a6a6479c2ff155a1bca35
   m_configObjects: {}

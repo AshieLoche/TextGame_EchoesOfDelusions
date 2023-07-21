@@ -17,51 +17,54 @@ public class GameDataController : MonoBehaviour
 
     private void Start()
     {
-        if (File.Exists(GetAnyPath())) 
-            gameData = File.ReadAllText(GetAnyPath()).Trim();
+        if (File.Exists(GetSaveState())) 
+            gameData = File.ReadAllText(GetSaveState()).Trim();
 
-        if (gameData == null || gameData == string.Empty || !File.Exists(GetAnyPath()))
-        {
-            loadGameButton.interactable = false;
-            MouseController.isInteractable = loadGameButton.IsInteractable();
-            loadGameText.color = Color.black;
-        }
-        else
+        if (!(gameData != null ^ gameData != string.Empty) || File.Exists(GetSaveState()))
         {
             loadGameButton.interactable = true;
             MouseController.isInteractable = loadGameButton.IsInteractable();
             loadGameText.colorGradient = new VertexGradient(Color.black, Color.black, Color.white, Color.white);
         }
+        else
+        {
+            loadGameButton.interactable = false;
+            MouseController.isInteractable = loadGameButton.IsInteractable();
+            loadGameText.color = Color.black;
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveGame();
     }
 
     public void NewGame()
     {
-        if (File.Exists(GetAnyPath()))
-            File.Delete(GetAnyPath());
+        if (File.Exists(GetSaveState()))
+        {
+            File.Delete(GetSaveState());
+            gameData = null;
+            StoryController.gameDataRetrieved = false;
+        }  
     }
 
     public static void SaveGame()
     {
         gameData = StoryController.scene.name + "\n" + StoryController.storyIndex;
-        if (!File.Exists(GetAnyPath()))
-            File.WriteAllText(GetAnyPath(), gameData);  //Create A File And Write The Receipt
+        File.WriteAllText(GetSaveState(), gameData);  //Create A File And Write The Receipt
     }
 
-    public static void LoadGame()
+    public void LoadGame()
     {
+        if (File.Exists(GetSaveState()))
+            gameData = File.ReadAllText(GetSaveState()).Trim();
         SceneController.LoadScene(gameData.Split('\n')[0].Trim());
-        StoryController.storyIndex = Convert.ToDouble(gameData.Split('\n')[1].Trim()); 
+        StoryController.storyIndex = Convert.ToDouble(gameData.Split('\n')[1].Trim());
+        StoryController.gameDataRetrieved = true;
     }
 
-    public static bool GameDataChecker()
-    {
-        if (gameData == null || gameData == string.Empty || !File.Exists(GetAnyPath()))
-            return false;
-        else
-            return true;
-    }
-
-    private static string GetAnyPath()
+    private static string GetSaveState()
     {
         var basePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath.Split(new string[] { "\\TextGame_EchoesOfDelusions" }, StringSplitOptions.None)[0];
         var filePath = Path.Combine(basePath, "TextGame_EchoesOfDelusions\\SaveStates\\SaveState.txt");
