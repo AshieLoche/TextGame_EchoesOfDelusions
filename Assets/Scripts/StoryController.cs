@@ -36,9 +36,20 @@ public class StoryController : MonoBehaviour
         { "S7.2", "Your mom looks back to the pan and \r\ngiggles as she say, \"You're in luck! I just \r\nfinished cooking us lunch.\".\r\n\r\nShe hands you a hearty meal of Gravy Steak. You\r\nsmiled softly as it was your favourite food. You\r\nlook over to your mom and thanked her for the\r\nfood as you grabbed a fork and dug in." },
         { "S7.3", "Your first bite was such a delight, but it was short\r\nlived as a rush of negative thoughts invaded your\r\nmind. Your mom noticed the shift in your mood\r\nas she asked, \"What's wrong, dear?\"." },
         { "S8.1", "You walked out to the backyard, finding your\r\ndad mowing the lawn. Your eyes widen as you\r\nwere afraid of being tasked to the rest of the mowing.\r\nYou tried to sneak inside the house but you heard a\r\nvoice calling you over.\r\n\r\nYou sighed and turned around to see your dad waving\r\nover to you. You wave back to him and smile. He\r\ngestured to come over as you worringly follow suit." },
-        { "S8.2", "He greeted you and gave you a massive bear hug\r\nand smiles asking, \"How is my sport doing?\".\r\n\r\nYou were relieved but your smile quickly fade as\r\nyour dad notice. He frowns and lifts your chin up\r\nmaking you look at him in the eye as he ask,\r\n\"What's the matter?\"." },
-        { "S8.3", "You looked away trying to avoid the question, but\r\nyour father's worried look won you over. You were\r\nabout to speak, instead you yelped as he quickly\r\ngrabs you and sat you on his lap.\r\n\r\nYou giggle softly helping to ease up your mood.\r\nYou explained to him the pain of being left out by\r\nyour friends." },
-        { "S8.4", "After everything, he hugs you from behind and\r\nsaid, \"You should go exercise! You shouldn't\r\ndrown yourself with all this negativity! And if I\r\nremember correctly you really enjoy working out!\".\r\n\r\nYou told your dad that you'll think about it. He\r\nlets you go and continues mowing. You walk over\r\nto your room and felt something heavy pressing\r\nagainst your chest. As dread fills your mind, since\r\nit has been a long while since you exercised properly." }
+        { "S8.2", "He greeted you and gave you a massive\r\nbear hug and smiles asking, \"How is my\r\nsport doing?\".\r\n\r\nYou were relieved but your smile quickly fade as\r\nyour dad notice. He frowns and lifts your chin up\r\nmaking you look at him in the eye as he ask,\r\n\"What's the matter?\"." },
+        { "S8.3", "You looked away trying to avoid the question,\r\nbut your father's worried look won you over.\r\nYou were about to speak, instead you yelped\r\nas he quickly grabs you and sat you on his lap.\r\n\r\nYou giggle softly helping to ease up your mood.\r\nYou explained to him the pain of feeling left out by\r\nyour friends." },
+        { "S8.4", "After everything, he hugs you from behind and said,\r\n\"You should go exercise! You shouldn't drown yourself\r\nwith all this negativity! And if I remember correctly\r\nyou really enjoy working out!\".\r\n\r\nYou told your dad that you'll think about it. He lets you go and\r\ncontinues mowing. You walk over to your room and felt something\r\nheavy pressing against your chest. As dread fills your mind,\r\nsince it has been a long while since you exercised properly." },
+        { "S9.1", "You hopped onto your computer and saw your friends\r\nwas playing as well. You decided to ask them if you can join in,\r\nsomething you are usually to shy to do so, and they agreed.\r\n\r\nHowever, as you guys played you noticed that they were mainly\r\ntalking to each other. You feel a twinge of pain as you felt a\r\nlittle left out, slightly triggering your abandonment issues." },
+        { "S9.2", "However, you kept on playing with them but as you go\r\non you felt more and more left out as they chatted and\r\ncelebrated together and everytime you try to butt in it\r\nlands on deaf ears.\r\n\r\nDuring your latest game, you performed very well and was so\r\nexcited. You tried to celebrate it with your friends but you\r\nwere silenced by one of the friend as they resume chattering\r\nwith one another." },
+        { "S9.3", "You sat there in shock, as you felt your\r\nhands shaking. You grit your teeth trying to\r\nignore the influx of negative thoughts. Your eyes\r\nshakes as it starts to water. You felt your heart sink\r\nas your breathing becomes heavier and faster. You\r\nsay to yourself, \"Th-They do care about me! Th-They\r\nare didn't mean to fucking shut me up... O-Or d-did\r\nthey???... M-Maybe they don't really care...\"" },
+        { "S9.4", "You paused and left the game. You stood up\r\nstaring blankly at the floor. The paranoia of just\r\nbeing included for pity's sake, the paranoia of your\r\nfriends not really being your friends, the paranoia of\r\nyour friends just being pretend was swallowing your\r\nmind whole." },
+        { "S9.5", "You try to convince yourself by saying, \"T-That's\r\npreposterous...\". As you wrapped your arms around yourself,\r\nsqueezing yourself. You grabbed your head trying to fight these\r\nthoughts, knowing that these aren't truem causing your breathing\r\nto get even faster. You are frantically panicking, as memories\r\nflash about in your head. The negative ones were like bullets\r\nthrough your flesh, the good ones being tainted with these\r\nmalicious thoughts destroying any hope left." },
+        { "S9.6", "You looked at the window in your room. As you\r\nsay your final words, \"N-Nobody would really miss\r\nme, right?\". You started charging at the window and\r\ncrash through it smashing through the glass and\r\nlanding head first onto the ground." },
+        { "S10.1", "You wore your running clothes and took off. You jogged\r\nthroughout the neighbourhood getting a good sweat on.\r\n\r\nAfter some time, you took a break near the park entrance,\r\ndrinking from your canteen as you suddenly heard a familiar\r\nvoice. You look around to see your friends together within the\r\npark. They were all present except you." },
+        { "S10.2", "Your mood drop as you question youself \"Wait... I\r\nthought they cancelled the meet up?\". You begin to panic\r\nas your eyes start to quiver with an influx of mixed\r\nemotions. You tried regaining your composure and carry on\r\nwith your jog despite it.\r\n\r\nOne of the friend got a quick glance of someone jogging pass\r\nthe park entrance but didn't saw who it was. So he just shrugged\r\nit off and resumed chitchatting with the rest." },
+        { "S10.3", "After your jog, you took a break in a cafe with the\r\nthought of your friends lying and intentionally leaving you\r\nout still searing through your brain, you took your phone\r\nout and check if they even attempted to invite you again\r\nbut there only the lsat message of cancelling the meet up.\r\n\r\nSuddenly, the cafe doors swung open and your so-called friends\r\nwalk in laughing. You scowl and glared at them lividly. Your\r\nfriends notice you and stopped seeing your glare and froze up." },
+        { "S10.4", "They panicked as they got caught while one of them\r\nsays, \"H-Hey there Elosh! Fancy seeing you here!\".\r\n\r\nHowever, you stayed silent and kept glaring at them. The same\r\nfriend frantically explains, \"O-OH!!! I-I can explain! Pl-Plans\r\nchanged again! However, w-we didn't know if you were busy or\r\nnot... S-So we decided not to invite you...\"." },
+        { "S10.5", "Your eyes widen from that blatant lie, you looked\r\nat your phone reading your message about being\r\nfree all week. Your blood starts to boil from the\r\naudacity of these bitches." }
     };
 
 
@@ -68,6 +79,10 @@ public class StoryController : MonoBehaviour
                 storyIndex = 7.1D;
             else if (scene.name == "CheckBackyard_Scene")
                 storyIndex = 8.1D;
+            else if (scene.name == "PlayVideoGames_Scene")
+                storyIndex = 9.1D;
+            else if (scene.name == "GoOutForAJog_Scene")
+                storyIndex = 10.1D;
         }
         
         GetStoryLine();
@@ -82,10 +97,12 @@ public class StoryController : MonoBehaviour
 
         if (storyKey == "S0")
             story.fontSize = 145;
-        else if (storyKey == "S2.2" || storyKey == "S2.3" || storyKey == "S4.1" || storyKey == "S4.2" || storyKey == "S5" || storyKey == "S8.4")
+        else if (storyKey == "S2.2" || storyKey == "S2.3" || storyKey == "S4.1" ||
+            storyKey == "S4.2" || storyKey == "S5" || storyKey == "S8.1" ||
+            storyKey == "S8.4" || storyKey == "S9.1" || storyKey == "S9.2" || 
+            storyKey == "S9.5" || storyKey == "S10.1" || storyKey == "S10.2" ||
+            storyKey == "S10.3" || storyKey == "S10.4")
             story.fontSize = 60;
-        else if (storyKey == "S8.1")
-            story.fontSize = 65;
         else
             story.fontSize = 75;
     }
