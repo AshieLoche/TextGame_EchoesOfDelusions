@@ -34,7 +34,11 @@ public class StoryController : MonoBehaviour
         { "S6", "However, those unwelcomed thoughts came\r\nrushing back in. You resumed your bathing taking\r\nyour time as you pause every so often just to wallow.\r\nYou went out of the bathroom and clothed yourself,\r\nbefore walking out to the hallway. As you reached the\r\nend, you findyourself between the path towards the\r\nkitchen and the sliding doors leading to the backyard." },
         { "S7.1", "You looked down and placed a hand on \r\nyour stomach as it growls. You shrugged and\r\nwalked over to the kitchen where you found your\r\nmother cooking something.\r\n\r\nYour mom noticed and greeted you with a smile. You\r\nsmiled back as your stomach growls again cutting \r\nyou off before being able to say a single word." },
         { "S7.2", "Your mom looks back to the pan and \r\ngiggles as she say, \"You're in luck! I just \r\nfinished cooking us lunch.\".\r\n\r\nShe hands you a hearty meal of Gravy Steak. You\r\nsmiled softly as it was your favourite food. You\r\nlook over to your mom and thanked her for the\r\nfood as you grabbed a fork and dug in." },
-        { "S7.3", "Your first bite was such a delight, but it was short\r\nlived as a rush of negative thoughts invaded your\r\nmind. Your mom noticed the shift in your mood\r\nas she asked, \"What's wrong, dear?\"." }
+        { "S7.3", "Your first bite was such a delight, but it was short\r\nlived as a rush of negative thoughts invaded your\r\nmind. Your mom noticed the shift in your mood\r\nas she asked, \"What's wrong, dear?\"." },
+        { "S8.1", "You walked out to the backyard, finding your\r\ndad mowing the lawn. Your eyes widen as you\r\nwere afraid of being tasked to the rest of the mowing.\r\nYou tried to sneak inside the house but you heard a\r\nvoice calling you over.\r\n\r\nYou sighed and turned around to see your dad waving\r\nover to you. You wave back to him and smile. He\r\ngestured to come over as you worringly follow suit." },
+        { "S8.2", "He greeted you and gave you a massive bear hug\r\nand smiles asking, \"How is my sport doing?\".\r\n\r\nYou were relieved but your smile quickly fade as\r\nyour dad notice. He frowns and lifts your chin up\r\nmaking you look at him in the eye as he ask,\r\n\"What's the matter?\"." },
+        { "S8.3", "You looked away trying to avoid the question, but\r\nyour father's worried look won you over. You were\r\nabout to speak, instead you yelped as he quickly\r\ngrabs you and sat you on his lap.\r\n\r\nYou giggle softly helping to ease up your mood.\r\nYou explained to him the pain of being left out by\r\nyour friends." },
+        { "S8.4", "After everything, he hugs you from behind and\r\nsaid, \"You should go exercise! You shouldn't\r\ndrown yourself with all this negativity! And if I\r\nremember correctly you really enjoy working out!\".\r\n\r\nYou told your dad that you'll think about it. He\r\nlets you go and continues mowing. You walk over\r\nto your room and felt something heavy pressing\r\nagainst your chest. As dread fills your mind, since\r\nit has been a long while since you exercised properly." }
     };
 
 
@@ -78,8 +82,10 @@ public class StoryController : MonoBehaviour
 
         if (storyKey == "S0")
             story.fontSize = 145;
-        else if (storyKey == "S2.2" || storyKey == "S2.3" || storyKey == "S4.1" || storyKey == "S4.2" || storyKey == "S5")
+        else if (storyKey == "S2.2" || storyKey == "S2.3" || storyKey == "S4.1" || storyKey == "S4.2" || storyKey == "S5" || storyKey == "S8.4")
             story.fontSize = 60;
+        else if (storyKey == "S8.1")
+            story.fontSize = 65;
         else
             story.fontSize = 75;
     }
