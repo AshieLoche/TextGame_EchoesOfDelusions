@@ -559,10 +559,10 @@ MonoBehaviour:
   m_text: "You gave out a somber sigh as you look over to your\r\ncloset. You saw
     your exercise equipment propped up \r\nagainst it as you reminisce the good old
     day.\r\n\r\nYou linger for a bit before getting up and walking over to the\r\nsame
-    equipment you used before finding yourself in this\r\nspiralling mess. You stare
-    at it for a moment dreading the\r\nreality that the joy of working out might
-    have also been sucked\r\naway by this god awful rut. However, you took a deep
-    breathe,\r\ngrabbing the equipment and begin exercising."
+    equipment you used to use before finding yourself in this\r\nspiralling mess.
+    You stare at it for a moment dreading the\r\nreality that the joy of working
+    out might have also been sucked\r\naway by this god awful rut. However, you took
+    a deep breathe,\r\ngrabbing the equipment and begin exercising."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
