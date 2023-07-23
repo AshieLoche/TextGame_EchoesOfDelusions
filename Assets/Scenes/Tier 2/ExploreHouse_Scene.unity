@@ -532,7 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 415693515}
   m_Layer: 0
-  m_Name: Phnatoms
+  m_Name: Phantoms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -742,19 +742,19 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'You stood up and instantly felt the weight of
 
-    your body pulling
-    you back down. You feel rather
+    your body pulling you
+    back down. You feel rather
 
-    feeble and lethargic as you fix up your
-    hair and
+    feeble and lethargic as you fix up your hair
+    and
 
     meander through your room and out to the hallway.
 
-    As you
-    reached the end, you find yourself between
+    As you reached
+    the end, you find yourself between
 
-    the path towards the kitchen
-    and the sliding doors
+    the path towards the kitchen and the
+    sliding doors
 
     leading to the backyard.'
   m_isRightToLeft: 0

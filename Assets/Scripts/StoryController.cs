@@ -16,7 +16,7 @@ public class StoryController : MonoBehaviour
     [SerializeField]
     private Button continueButton;
     private string storyLine, storyKey;
-    private static string previousScene;
+    private static string previousScene = "Loader_Scene";
     public static Scene scene;
     public static double storyIndex = 0D;
     public static bool continueChecker = false, gameDataRetrieved = false;
@@ -27,6 +27,8 @@ public class StoryController : MonoBehaviour
         { "S0", "Echoes\r\nof\r\nDelusion" },
         //Wake Up - Scene
         { "S1.A", "As the clock strikes 12 in the afternoon, your\r\nalarm starts to blare out waking you up from your\r\nslumber. You grumpily hid under your blanket,\r\nbut gave up as your alarm kept on wailing\r\nintensely. You turned the alarm off, sitting up\r\nwith a sigh as your disheviled hair cover your\r\nface." },
+        { "S1.B", "You woke up at 12 in the afternoon. Your hair\r\nmessed up with tear stains across your cheeks.\r\nYou groan as your alarm rang loudly. You woke up\r\nslamming your alarm feeling rather ill-tempered,\r\nas you sat up clutching your stomach as it growls\r\nferociously from the lack of sustenance. You ponder\r\nto yourself whether to take a shower, explore the\r\nhouse, or exercise." },
+        { "S1.C", "You woke up at 12 in the afternoon feeling lethargic and\r\nlightheaded. You checked your phone to see your friends sending\r\npics of them in the park and cafe yesterday, souring your mood.\r\n\r\nYour lightheadedness wasn't any help as it made you more\r\nirritable. However, you just proceed to cover yourself up with\r\nyour blanket and watched on your phone not even leaving your\r\nroom for the rest of the day. Until you pass once again." },
         //Shower - Scene
         { "S2.1", "You notice your hair covering your eyes with\r\ntangles and locks. You got up and gradually\r\nshuffled over to the bathroom.\r\n\r\nYou stood right infront of the sink and lean over\r\nto wash your hair before lifting your head up \r\nflipping your hair to the back of your head." },
         { "S2.2", "Suddenly you caught a glance of your reflection staring \r\nright at you. You stared right back, but as you do you \r\nsuddenly get overwhelmed with apiercing memory causing \r\nyou to flinch away.\r\n\r\nYou turned on the shower trying to forget the unwelcomed \r\nthought. However, you just end up with your hands against \r\nthe wall watching droplets of water trickling down your \r\nbody onto to floor, as your eyes starts to well up." },
@@ -47,7 +49,7 @@ public class StoryController : MonoBehaviour
         //Check Backyard - Scene
         { "S8.1", "You walked out to the backyard, finding your\r\ndad mowing the lawn. Your eyes widen as you\r\nwere afraid of being tasked to the rest of the mowing.\r\nYou tried to sneak inside the house but you heard a\r\nvoice calling you over.\r\n\r\nYou sighed and turned around to see your dad waving\r\nover to you. You wave back to him and smile. He\r\ngestured to come over as you worringly follow suit." },
         { "S8.2", "He greeted you and gave you a massive\r\nbear hug and smiles asking, \"How is my\r\nsport doing?\".\r\n\r\nYou were relieved but your smile quickly fade as\r\nyour dad notice. He frowns and lifts your chin up\r\nmaking you look at him in the eye as he ask,\r\n\"What's the matter?\"." },
-        { "S8.3", "You looked away trying to avoid the question,\r\nbut your father's worried look won you over.\r\nYou were about to speak, instead you yelped\r\nas he quickly grabs you and sat you on his lap.\r\n\r\nYou giggle softly helping to ease up your mood.\r\nYou explained to him the pain of feeling left out by\r\nyour friends." },
+        { "S8.3", "You looked away trying to avoid the question, but\r\nyour father's worried look won you over. You were about\r\nto speak, instead you yelped as he quickly wraps his arm\r\naround you pulling you closer.\r\n\r\nYou giggle softly helping to ease up your mood. You explained\r\nto him the pain of feeling left out by your friends and the\r\nparanoid that they might pretending to be your friends." },
         { "S8.4", "After everything, he hugs you from behind and said,\r\n\"You should go exercise! You shouldn't drown yourself\r\nwith all this negativity! And if I remember correctly\r\nyou really enjoy working out!\".\r\n\r\nYou told your dad that you'll think about it. He lets you go and\r\ncontinues mowing. You walk over to your room and felt something\r\nheavy pressing against your chest. As dread fills your mind,\r\nsince it has been a long while since you exercised properly." },
         //Play Video Games - Scene
         { "S9.1", "You hopped onto your computer and saw your friends\r\nwas playing as well. You decided to ask them if you can join in,\r\nsomething you are usually to shy to do so, and they agreed.\r\n\r\nHowever, as you guys played you noticed that they were mainly\r\ntalking to each other. You feel a twinge of pain as you felt a\r\nlittle left out, slightly triggering your abandonment issues." },
@@ -80,7 +82,23 @@ public class StoryController : MonoBehaviour
         { "S13.5", "Suddenly, you feel a bit unsettled as you worry\r\nabout what your friends' reactions might be. As you\r\nponder if you should go through with it or not." },
         //Lie - Scene
         { "S14.1", "You told her you were fine and asked if you\r\ncould bring the food back to your room. There\r\nwas an desperate look on your mom's face, but she\r\nreluctantly agrees.\r\n\r\nYou walked to your room gripping your chest as you\r\nwanted to tell her the truth but it was just too painful\r\nto do so." },
-        { "S14.2", "You placed the platter on your nightstand and\r\njumped onto your bed. At first panting as your mind\r\nis slowly being flooded by all these negative\r\nthoughts, until you end up crying onto your pillow.\r\nYou ended up falling asleep for the rest of the day." }
+        { "S14.2", "You placed the platter on your nightstand and\r\njumped onto your bed. At first panting as your mind\r\nis slowly being flooded by all these negative\r\nthoughts, until you end up crying onto your pillow.\r\nYou ended up falling asleep for the rest of the day." },
+        //Ignore - Scene
+        { "S15.1", "You scoffed at the thought. Exercise just\r\nbrought you pain and left you more tired than ever.\r\n\r\nYou jumped onto your bed and grabbed your phone.\r\nYouwatched YouTube for the rest of the day as you\r\nlounge around barely moving a muscle." },
+        { "S15.2", "You stayed up way pass midnight.\r\nEventually you fallen asleep with\r\nyour phone still in your hand."},
+        //Walk Out - Scene
+        { "S16", "After a few seconds, you got up and left the\r\ncafe. The group look at each other feeling rather\r\nguilty, until they heard DINGS from their phones. As\r\nthey open it, they saw a notification announcing your\r\ndeparture from the group chat accompanied by a\r\nmessage saying, \"And I decided to leave you fake-ass\r\nmother fuckers!\"." },
+        //Forgive & Forget - Scene
+        { "S17.1", "After a few seconds, you gave out a big\r\nsigh swung your head down with your eyes\r\nshut. You forgave without moving a muscle as they\r\nsmile and proceed to walk out of the cafe like\r\nnothing happened.\r\n\r\nYou look up and watch them walk off. Your jaw\r\ndropped as they just abandoned you once again." },
+        { "S17.2", "However, you just rolled your eyes accepting the fact\r\nthat they aren't your frieds. As your food arrived.\r\nYou thanked the waitress and started eating.\r\n\r\nYour phone started buzzing as you saw your friends\r\nmessaging one another sending their pics from the park,\r\nwithout a mere mention about you or what just happened.\r\nYou just shrugged and left the group chat and carried on\r\nenjoying your food broken hearted but stronger." },
+        //Succumbed Ending
+        { "S18", "Succumbed\r\nEnding" },
+        //Reconciliation Ending
+        { "S19", "Reconciliation\r\nEnding" },
+        //Status Quo Ending
+        { "S20", "Status Quo\r\nEnding" },
+        //Solitude Ending
+        { "S21", "Solitude\r\nEnding" }
     };
 
 
@@ -104,7 +122,7 @@ public class StoryController : MonoBehaviour
                 storyIndex = 4.1D;
             else if (scene.name == "CheckPhone_Scene")
                 storyIndex = 5D;
-            else if (scene.name == "FinishHouse_Scene")
+            else if (scene.name == "FinishBathing_Scene")
                 storyIndex = 6D;
             else if (scene.name == "CheckKitchen_Scene")
                 storyIndex = 7.1D;
@@ -122,6 +140,20 @@ public class StoryController : MonoBehaviour
                 storyIndex = 13.1D;
             else if (scene.name == "Lie_Scene")
                 storyIndex = 14.1D;
+            else if (scene.name == "Ignore_Scene")
+                storyIndex = 15.1D;
+            else if (scene.name == "WalkOut_Scene")
+                storyIndex = 16D;
+            else if (scene.name == "ForgiveAndForget_Scene")
+                storyIndex = 17.1D;
+            else if (scene.name == "Succumbed_Ending")
+                storyIndex = 18D;
+            else if (scene.name == "Reconciliation_Ending")
+                storyIndex = 19D;
+            else if (scene.name == "StatusQuo_Ending")
+                storyIndex = 20D;
+            else if (scene.name == "Solitude_Ending")
+                storyIndex = 21D;
         }
 
         GetStoryLine();
@@ -135,25 +167,29 @@ public class StoryController : MonoBehaviour
 
     private void GetStoryLine()
     {
-        if (previousScene == "Loader_Scene")
+        if (previousScene == "Loader_Scene" && scene.name == "WakeUp_Scene")
             storyKey = $"S{storyIndex}.A";
-        else if (previousScene == "Lie_Scene" || previousScene == "Ignore_Scene")
+        else if (previousScene == "Lie_Scene")
             storyKey = $"S{storyIndex}.B";
+        else if (previousScene == "Ignore_Scene")
+            storyKey = $"S{storyIndex}.C";
         else
             storyKey = $"S{storyIndex}";
 
         storyLine = storyLines[storyKey];
         story.text = storyLine;
 
-        if (storyKey == "S0")
+        if (storyKey == "S0" || storyKey == "S18" || storyKey == "S19" || storyKey == "S20" ||
+            storyKey == "S21")
             story.fontSize = 145;
-        else if (storyKey == "S2.2" || storyKey == "S2.3" || storyKey == "S4.1" ||
-            storyKey == "S4.2" || storyKey == "S5" || storyKey == "S8.1" ||
-            storyKey == "S8.4" || storyKey == "S9.1" || storyKey == "S9.2" ||
-            storyKey == "S9.5" || storyKey == "S10.1" || storyKey == "S10.2" ||
-            storyKey == "S10.3" || storyKey == "S10.4" || storyKey == "S12.1" ||
-            storyKey == "S12.2" || storyKey == "S12.3" || storyKey == "S12.4" ||
-            storyKey == "S13.4")
+        else if (storyKey == "S1.C" || storyKey == "S2.2" || storyKey == "S2.3" ||
+            storyKey == "S4.1" || storyKey == "S4.2" || storyKey == "S5" ||
+            storyKey == "S8.1" || storyKey == "S8.3" || storyKey == "S8.4" ||
+            storyKey == "S9.1" || storyKey == "S9.2" || storyKey == "S9.5" ||
+            storyKey == "S10.1" || storyKey == "S10.2" || storyKey == "S10.3" ||
+            storyKey == "S10.4" || storyKey == "S12.1" || storyKey == "S12.2" ||
+            storyKey == "S12.3" || storyKey == "S12.4" || storyKey == "S13.4" ||
+            storyKey == "S17.2")
             story.fontSize = 60;
         else
             story.fontSize = 75;

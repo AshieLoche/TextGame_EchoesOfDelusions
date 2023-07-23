@@ -27,4 +27,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Title_Scene");
         StoryController.storyIndex = 0;
     }
+
+    public void ReturnToMainMenu()
+    {
+        GameDataController.NewGame();
+        SceneManager.LoadScene("Title_Scene");
+        StoryController.storyIndex = 0;
+    }
 }

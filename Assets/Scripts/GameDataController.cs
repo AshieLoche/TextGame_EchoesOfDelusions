@@ -13,11 +13,20 @@ public class GameDataController : MonoBehaviour
     private Button loadGameButton;
     [SerializeField]
     private TextMeshProUGUI loadGameText;
-    private static string gameData = null;
+    private static string gameData = null, basePath, filePath, newDirectoryPath;
+    private static bool newDirectory = false;
 
     private void Start()
     {
-        if (File.Exists(GetSaveState())) 
+        if (!Directory.Exists(GetDirectory()))
+        {
+            newDirectory = true;
+            newDirectoryPath = GetNewDirectory();
+            Directory.CreateDirectory($"{newDirectoryPath}\\Endings");
+            Directory.CreateDirectory($"{newDirectoryPath}\\SaveStates");
+        }
+
+        if (File.Exists(GetSaveState()))
             gameData = File.ReadAllText(GetSaveState()).Trim();
 
         if (!(gameData != null ^ gameData != string.Empty) || File.Exists(GetSaveState()))
@@ -32,6 +41,8 @@ public class GameDataController : MonoBehaviour
             MouseController.isInteractable = loadGameButton.IsInteractable();
             loadGameText.color = Color.black;
         }
+
+        LoadEndings();
     }
 
     private void OnApplicationQuit()
@@ -39,14 +50,14 @@ public class GameDataController : MonoBehaviour
         SaveGame();
     }
 
-    public void NewGame()
+    public static void NewGame()
     {
         if (File.Exists(GetSaveState()))
         {
             File.Delete(GetSaveState());
             gameData = null;
             StoryController.gameDataRetrieved = false;
-        }  
+        }
     }
 
     public static void SaveGame()
@@ -66,8 +77,81 @@ public class GameDataController : MonoBehaviour
 
     private static string GetSaveState()
     {
-        var basePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath.Split(new string[] { "\\TextGame_EchoesOfDelusions" }, StringSplitOptions.None)[0];
-        var filePath = Path.Combine(basePath, "TextGame_EchoesOfDelusions\\SaveStates\\SaveState.txt");
+        if (newDirectory)
+        {
+            filePath = Path.Combine(newDirectoryPath, "SaveStates\\SaveState.txt");
+            return filePath;
+        }
+        else
+        {
+            basePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath.Split(new string[] { "\\TextGame_EchoesOfDelusions" }, StringSplitOptions.None)[0];
+            filePath = Path.Combine(basePath, "TextGame_EchoesOfDelusions\\SaveStates\\SaveState.txt");
+            return filePath;
+        }
+    }
+
+    private static string GetEndings(string ending)
+    {
+        if (newDirectory)
+        {
+            filePath = Path.Combine(newDirectoryPath, $"\\Endings\\{ending}.txt");
+            return filePath;
+        }
+        else
+        {
+            basePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath.Split(new string[] { "\\TextGame_EchoesOfDelusions" }, StringSplitOptions.None)[0];
+            filePath = Path.Combine(basePath, $"TextGame_EchoesOfDelusions\\Endings\\{ending}.txt");
+            return filePath;
+        }    
+    }
+
+    private static string GetDirectory()
+    {
+        basePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath.Split(new string[] { "\\TextGame_EchoesOfDelusions" }, StringSplitOptions.None)[0];
+        filePath = Path.Combine(basePath, "TextGame_EchoesOfDelusions");
         return filePath;
+    }
+
+    private static string GetNewDirectory()
+    {
+        basePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath.Split(new string[] { "\\Downloads" }, StringSplitOptions.None)[0];
+        filePath = Path.Combine(basePath, "Desktop\\TextGame_EchoesOfDelusions");
+
+        if(!Directory.Exists(filePath))
+        {
+            basePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath.Split(new string[] { "\\Documents" }, StringSplitOptions.None)[0];
+            filePath = Path.Combine(basePath, "Desktop\\TextGame_EchoesOfDelusions");
+        }
+
+        return filePath;
+    }
+
+    public static void SaveEndings(string ending, string endingPasscode)
+    {
+        File.WriteAllText(GetEndings(ending), endingPasscode);
+    }
+
+    public static void LoadEndings()
+    {
+        if (File.Exists(GetEndings("Succumbed Ending (1of2)")) && File.ReadAllText(GetEndings("Succumbed Ending (1of2)")).Trim() == "Too")
+            EndingsController.succumbedEndingStar_LeftChecker = true;
+        
+        if (File.Exists(GetEndings("Succumbed Ending (2of2)")) && File.ReadAllText(GetEndings("Succumbed Ending (2of2)")).Trim() == "stare")
+            EndingsController.succumbedEndingStar_RightChecker = true;
+        
+        if (File.Exists(GetEndings("Reconciliation_Ending")) && File.ReadAllText(GetEndings("Reconciliation_Ending")).Trim() == "Please!")
+            EndingsController.reconciliationEndingStar_Checker = true;
+        
+        if (File.Exists(GetEndings("Status Quo Ending (1of2)")) && File.ReadAllText(GetEndings("Status Quo Ending (1of2)")).Trim() == "Do")
+            EndingsController.statusQuoEndingStar_LeftChecker = true;
+        
+        if (File.Exists(GetEndings("Status Quo Ending (2of2)")) && File.ReadAllText(GetEndings("Status Que Ending (2of2)")).Trim() == "Long!")
+            EndingsController.statusQuoEndingStar_RightChecker = true;
+        
+        if (File.Exists(GetEndings("Solitude Ending (1of2)")) && File.ReadAllText(GetEndings("Solitude Ending (1of2)")).Trim() == "Not")
+            EndingsController.solitudeEndingStar_LeftChecker = true;
+        
+        if (File.Exists(GetEndings("Solitude Ending (2of2)")) && File.ReadAllText(GetEndings("Solitude Ending (2of2)")).Trim() == "For")
+            EndingsController.solitudeEndingStar_RightChecker = true;
     }
 }

@@ -2018,7 +2018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1859309464}
   m_Layer: 0
-  m_Name: Phnatoms
+  m_Name: Phantoms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

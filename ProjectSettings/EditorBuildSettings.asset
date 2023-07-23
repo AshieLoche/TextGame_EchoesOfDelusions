@@ -53,4 +53,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tier 4/Lie_Scene.unity
     guid: 79f7ab98b235b934c92c92521134b3ea
+  - enabled: 1
+    path: Assets/Scenes/Tier 4/Ignore_Scene.unity
+    guid: ea0ab236dda66f54e84bc5215fce1262
+  - enabled: 1
+    path: Assets/Scenes/Tier 4/WalkOut_Scene.unity
+    guid: 893cd2561dedb544dabe5af9ba2c91d8
+  - enabled: 1
+    path: Assets/Scenes/Tier 4/ForgiveAndForget_Scene.unity
+    guid: 8861a0adc54a3d546963ddb6fc72011e
+  - enabled: 1
+    path: Assets/Scenes/Tier 5/Succumbed_Ending.unity
+    guid: 77f98846c098ac64fab46d3aee5d1534
+  - enabled: 1
+    path: Assets/Scenes/Tier 5/Reconciliation_Ending.unity
+    guid: 95f1c89cba2c0a243b4811d17e50f846
+  - enabled: 1
+    path: Assets/Scenes/Tier 5/SuccumbedEnding_Scene 2.unity
+    guid: 436f8bd127acd284aa6057571755706a
+  - enabled: 1
+    path: Assets/Scenes/Tier 5/SuccumbedEnding_Scene 3.unity
+    guid: 7f06cb38fd401a94187f4ae910268769
   m_configObjects: {}
