@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using System;
-using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Playables;
+using UnityEngine.UI;
+
 
 public class StoryController : MonoBehaviour
 {
@@ -16,19 +16,17 @@ public class StoryController : MonoBehaviour
     [SerializeField]
     private Button continueButton;
     private string storyLine, storyKey;
-    private static string previousScene = "Loader_Scene";
     public static Scene scene;
     public static double storyIndex = 0D;
-    public static bool continueChecker = false, gameDataRetrieved = false;
+    public static bool continueChecker = false,
+        gameDataRetrieved = false;
 
     private IDictionary<string, string> storyLines = new Dictionary<string, string>()
     {
         //Title and Loeader - Scene
         { "S0", "Echoes\r\nof\r\nDelusion" },
         //Wake Up - Scene
-        { "S1.A", "As the clock strikes 12 in the afternoon, your\r\nalarm starts to blare out waking you up from your\r\nslumber. You grumpily hid under your blanket,\r\nbut gave up as your alarm kept on wailing\r\nintensely. You turned the alarm off, sitting up\r\nwith a sigh as your disheviled hair cover your\r\nface." },
-        { "S1.B", "You woke up at 12 in the afternoon. Your hair\r\nmessed up with tear stains across your cheeks.\r\nYou groan as your alarm rang loudly. You woke up\r\nslamming your alarm feeling rather ill-tempered,\r\nas you sat up clutching your stomach as it growls\r\nferociously from the lack of sustenance. You ponder\r\nto yourself whether to take a shower, explore the\r\nhouse, or exercise." },
-        { "S1.C", "You woke up at 12 in the afternoon feeling lethargic and\r\nlightheaded. You checked your phone to see your friends sending\r\npics of them in the park and cafe yesterday, souring your mood.\r\n\r\nYour lightheadedness wasn't any help as it made you more\r\nirritable. However, you just proceed to cover yourself up with\r\nyour blanket and watched on your phone not even leaving your\r\nroom for the rest of the day. Until you pass once again." },
+        { "S1", "As the clock strikes 12 in the afternoon, your\r\nalarm starts to blare out waking you up from your\r\nslumber. You grumpily hid under your blanket,\r\nbut gave up as your alarm kept on wailing\r\nintensely. You turned the alarm off, sitting up\r\nwith a sigh as your disheviled hair cover your\r\nface." },
         //Shower - Scene
         { "S2.1", "You notice your hair covering your eyes with\r\ntangles and locks. You got up and gradually\r\nshuffled over to the bathroom.\r\n\r\nYou stood right infront of the sink and lean over\r\nto wash your hair before lifting your head up \r\nflipping your hair to the back of your head." },
         { "S2.2", "Suddenly you caught a glance of your reflection staring \r\nright at you. You stared right back, but as you do you \r\nsuddenly get overwhelmed with apiercing memory causing \r\nyou to flinch away.\r\n\r\nYou turned on the shower trying to forget the unwelcomed \r\nthought. However, you just end up with your hands against \r\nthe wall watching droplets of water trickling down your \r\nbody onto to floor, as your eyes starts to well up." },
@@ -83,9 +81,11 @@ public class StoryController : MonoBehaviour
         //Lie - Scene
         { "S14.1", "You told her you were fine and asked if you\r\ncould bring the food back to your room. There\r\nwas an desperate look on your mom's face, but she\r\nreluctantly agrees.\r\n\r\nYou walked to your room gripping your chest as you\r\nwanted to tell her the truth but it was just too painful\r\nto do so." },
         { "S14.2", "You placed the platter on your nightstand and\r\njumped onto your bed. At first panting as your mind\r\nis slowly being flooded by all these negative\r\nthoughts, until you end up crying onto your pillow.\r\nYou ended up falling asleep for the rest of the day." },
+        { "S14.3", "You woke up at 12 in the afternoon. Your hair\r\nmessed up with tear stains across your cheeks.\r\nYou groan as your alarm rang loudly. You woke up\r\nslamming your alarm feeling rather ill-tempered,\r\nas you sat up clutching your stomach as it growls\r\nferociously from the lack of sustenance. You ponder\r\nto yourself whether to take a shower, explore the\r\nhouse, or exercise." },
         //Ignore - Scene
         { "S15.1", "You scoffed at the thought. Exercise just\r\nbrought you pain and left you more tired than ever.\r\n\r\nYou jumped onto your bed and grabbed your phone.\r\nYouwatched YouTube for the rest of the day as you\r\nlounge around barely moving a muscle." },
         { "S15.2", "You stayed up way pass midnight.\r\nEventually you fallen asleep with\r\nyour phone still in your hand."},
+        { "S15.3", "You woke up at 12 in the afternoon feeling lethargic and\r\nlightheaded. You checked your phone to see your friends sending\r\npics of them in the park and cafe yesterday, souring your mood.\r\n\r\nYour lightheadedness wasn't any help as it made you more\r\nirritable. However, you just proceed to cover yourself up with\r\nyour blanket and watched on your phone not even leaving your\r\nroom for the rest of the day. Until you pass once again." },
         //Walk Out - Scene
         { "S16", "After a few seconds, you got up and left the\r\ncafe. The group look at each other feeling rather\r\nguilty, until they heard DINGS from their phones. As\r\nthey open it, they saw a notification announcing your\r\ndeparture from the group chat accompanied by a\r\nmessage saying, \"And I decided to leave you fake-ass\r\nmother fuckers!\"." },
         //Forgive & Forget - Scene
@@ -101,8 +101,14 @@ public class StoryController : MonoBehaviour
         { "S21", "Solitude\r\nEnding" }
     };
 
-
     private void Start()
+    {
+        SetStoryIndex();
+        GetStoryLine();
+        GetButtonChoices();
+    }
+
+    private void SetStoryIndex()
     {
         if (gameDataRetrieved)
             gameDataRetrieved = false;
@@ -155,40 +161,24 @@ public class StoryController : MonoBehaviour
             else if (scene.name == "Solitude_Ending")
                 storyIndex = 21D;
         }
-
-        GetStoryLine();
-        GetButtonChoices();
-    }
-
-    public void SetPreviousScene()
-    {
-        previousScene = scene.name;
     }
 
     private void GetStoryLine()
     {
-        if (previousScene == "Loader_Scene" && scene.name == "WakeUp_Scene")
-            storyKey = $"S{storyIndex}.A";
-        else if (previousScene == "Lie_Scene")
-            storyKey = $"S{storyIndex}.B";
-        else if (previousScene == "Ignore_Scene")
-            storyKey = $"S{storyIndex}.C";
-        else
-            storyKey = $"S{storyIndex}";
-
+        storyKey = $"S{storyIndex}";
         storyLine = storyLines[storyKey];
         story.text = storyLine;
 
-        if (storyKey == "S0" || storyKey == "S18" || storyKey == "S19" || storyKey == "S20" ||
-            storyKey == "S21")
+        if (storyKey == "S0" || storyKey == "S18" || storyKey == "S19" ||
+            storyKey == "S20" || storyKey == "S21")
             story.fontSize = 145;
-        else if (storyKey == "S1.C" || storyKey == "S2.2" || storyKey == "S2.3" ||
-            storyKey == "S4.1" || storyKey == "S4.2" || storyKey == "S5" ||
-            storyKey == "S8.1" || storyKey == "S8.3" || storyKey == "S8.4" ||
-            storyKey == "S9.1" || storyKey == "S9.2" || storyKey == "S9.5" ||
-            storyKey == "S10.1" || storyKey == "S10.2" || storyKey == "S10.3" ||
-            storyKey == "S10.4" || storyKey == "S12.1" || storyKey == "S12.2" ||
-            storyKey == "S12.3" || storyKey == "S12.4" || storyKey == "S13.4" ||
+        else if (storyKey == "S2.2" || storyKey == "S2.3" || storyKey == "S4.1" ||
+            storyKey == "S4.2" || storyKey == "S5" || storyKey == "S8.1" ||
+            storyKey == "S8.3" || storyKey == "S8.4" || storyKey == "S9.1" ||
+            storyKey == "S9.2" || storyKey == "S9.5" || storyKey == "S10.1" ||
+            storyKey == "S10.2" || storyKey == "S10.3" || storyKey == "S10.4" ||
+            storyKey == "S12.1" || storyKey == "S12.2" || storyKey == "S12.3" ||
+            storyKey == "S12.4" || storyKey == "S13.4" || storyKey == "S15.3" ||
             storyKey == "S17.2")
             story.fontSize = 60;
         else
@@ -204,7 +194,7 @@ public class StoryController : MonoBehaviour
 
     private void GetButtonChoices()
     {
-        if ((Math.Truncate(storyIndex) < storyIndex && storyLines.ContainsKey("S" + (storyIndex + 0.1D))) || storyKey == $"S{storyIndex}.B")
+        if ((Math.Truncate(storyIndex) < storyIndex && storyLines.ContainsKey("S" + (storyIndex + 0.1D))))
             continueChecker = true;
         else
             continueChecker = false;

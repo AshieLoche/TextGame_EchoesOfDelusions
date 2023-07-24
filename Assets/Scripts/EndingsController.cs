@@ -22,9 +22,12 @@ public class EndingsController : MonoBehaviour
         solitudeEndingStar_LeftChecker = false,
         solitudeEndingStar_RightChecker = false;
 
-    private Color starColor;
-
     private void Start()
+    {
+        SetEndingStars();
+    }
+
+    private void SetEndingStars()
     {
         //Succumbed Ending
         if (succumbedEndingStar_LeftChecker)
@@ -75,25 +78,25 @@ public class EndingsController : MonoBehaviour
     public void SuccumbedEndingStar_Right()
     {
         succumbedEndingStar_RightChecker = true;
-        GameDataController.SaveEndings("Succumbe Ending (2of2)", "Stare");
+        GameDataController.SaveEndings("Succumbed Ending (2of2)", "Stare");
     }
 
     public void ReconciliationEndingStar()
     {
         reconciliationEndingStar_Checker = true;
-        GameDataController.SaveEndings("Reconciliation_Ending", "Please!");
+        GameDataController.SaveEndings("Reconciliation Ending", "Please!");
     }
 
     public void StatusQuoEndingStar_Left()
     {
         statusQuoEndingStar_LeftChecker = true;
-        GameDataController.SaveEndings("Status Quo (1of2)", "Do");
+        GameDataController.SaveEndings("Status Quo Ending (1of2)", "Do");
     }
 
     public void StatusQuoEndingStar_Right()
     {
         statusQuoEndingStar_RightChecker = true;
-        GameDataController.SaveEndings("Status Quo (2of2)", "Long!");
+        GameDataController.SaveEndings("Status Quo Ending (2of2)", "Long!");
     }
 
     public void SolitudeEndingStar_Left()
